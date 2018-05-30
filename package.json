@@ -8,6 +8,6 @@
   },
   "scripts": {
     "test": "echo 'skipping tests'",
-    "start": "GOOGLE_APPLICATION_CREDENTIALS=./gcp_ml_ci_cd_demo.json node app.js"
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS node app.js"
   }
 }
