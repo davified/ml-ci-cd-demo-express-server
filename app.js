@@ -1,11 +1,10 @@
 var express = require("express");
 var favicon = require("serve-favicon");
 var bodyParser = require("body-parser");
-var cors = require("cors");
 var makeRequestToMLEngine = require("./ml-engine");
 var port = process.env.PORT || 3000;
 var app = express();
-app.use(cors());
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
