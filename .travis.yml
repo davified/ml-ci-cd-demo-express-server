@@ -4,6 +4,9 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+- openssl aes-256-cbc -K $encrypted_b5858c990828_key -iv $encrypted_b5858c990828_iv
+  -in gcp_ml_ci_cd_demo.json.enc -out ./gcp_ml_ci_cd_demo.json -d
 deploy:
   provider: heroku
   app: secure-headland-45562
