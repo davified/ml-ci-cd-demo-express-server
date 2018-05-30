@@ -10,18 +10,25 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/", async function(req, res, next) {
-  const userInput = req.body.input;
-  const response = await makeRequestToMLEngine(userInput);
-  const classification = response["predictions"][0];
-  let sentiment;
-  if (classification === 1) {
-    sentiment = "positive";
-  } else {
-    sentiment = "negative";
+async function servePredictions(req, res, next) {
+  try {
+    const userInput = req.body.input;
+    const response = await makeRequestToMLEngine(userInput);
+    const classification = response["predictions"][0];
+    let sentiment;
+    if (classification === 1) {
+      sentiment = "positive";
+    } else {
+      sentiment = "negative";
+    }
+    res.json(sentiment);
+  } catch {
+    res.json("unknown");
+    console.log("error in express app");
   }
-  res.json(sentiment);
-});
+}
+
+app.post("/", servePredictions);
 
 app.get("/", function(req, res, next) {
   res.json("simple nlp server demo");
