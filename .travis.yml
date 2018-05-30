@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '9'
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  app: secure-headland-45562
+  on:
+    repo: davified/ml-ci-cd-demo-express-server
+  api_key:
+    secure: pHJ9Q5jqexWFt8nVeM49Zblmm6oHd4RnZ20UiRvlHABx+ac6oARfNCxxcBylKvV4y4wvljT/lErl8cJhW5G9A3Gizg6O/8ZSMQCsfMy+QBGlrTxJ06b6LE/vI8tJ/H7pph9HgZrAOLw59gO/0YkdyjjFFiDrEW3A3a6WR4ikO16F2Gr11WxKVUWbHto6tgmqY6Spronm+9hXdOO6HF5DrSC3UxJ1BrqboRxh4g38FT1/dpMEj/4V6HJif0XeGN/wfo5akh2Twi/t1TyXlkzhqZt/jBLIUiRia0k0xIHRih79T0QhA5Fj5MGiTLGaps0rJ+A/6qjR8kvz+gBpCyM+wQm5z3W76nXotnkoJEM7CV036AWDMOsHNdEZiRb6DgARsR5vXyfNjjS8ZsGRbLXw1UDCurkgtMGEDn+N0RVPHVT/k/+2VmAzShC2oC29/e3xHMiXEJAqSiYv4O4XK39Fg+UlgI3fIlagbTGF+kH6uNy8gEUIwSKJaKEsUaG4wJcafuiHlyatBfnpb7mLzrEFEEV70/F/ZdTsh6dVi1hVW4Bs+5alBBF3Ix/7vVxxm+UuhMcvfa8D2YwCXkpEWZVe3PIgvnYDBDhWN4FEQZ+yzcR9OmU+0EbtI90P56RfXVKMT89g9m7Mqqd+/ITW+ak4o6MWe34/EuhFWsgkxBSKbT0=
