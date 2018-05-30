@@ -22,7 +22,7 @@ async function servePredictions(req, res, next) {
       sentiment = "negative";
     }
     res.json(sentiment);
-  } catch {
+  } catch (error) {
     res.json("unknown");
     console.log("error in express app");
   }
