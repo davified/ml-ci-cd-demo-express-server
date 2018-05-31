@@ -21,6 +21,8 @@ async function servePredictions(req, res, next) {
     } else {
       sentiment = "negative";
     }
+    console.log(`[REQUEST] User input: ${userInput}`);
+    console.log(`[RESPONSE] ML Engine prediction: ${sentiment}`);
     res.json(sentiment);
   } catch (error) {
     res.json("unknown");
@@ -49,7 +51,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  console.log(err);
+  // res.render("error");
 });
 
 app.listen(port, function() {
